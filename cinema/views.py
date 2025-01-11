@@ -19,8 +19,7 @@ def movie_list(request):
         return Response(serializer.data, status=201)
 
 
-@api_view(['GET', 'POST'])
-
+@api_view(['GET', 'PUT', 'DELETE'])
 def movie_detail(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
     if request.method == 'GET':
